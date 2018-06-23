@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		h1{
+			text-align: center;
+		}
+		#h1{
+			text-align: center;
+			padding-top: 10px;
+		}
+		table{
+			margin-right:auto;
+			margin-left:auto;
+		}
+		td{
+			
+			width: 50px;
+    		height: 50px;
+		}
+		#chance{
+			text-align: center;
+			padding-top: 10px;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Forca:</h1>
+	<table border="1">
+		<tr>
+			<td id="p1"></td>
+			<td id="p2"></td>
+			<td id="p3"></td>
+			<td id="p4"></td>
+			<td id="p5"></td>
+			<td id="p6"></td>
+		</tr>
+	</table>
+	<h1 id="h1">Escolha uma letra:</h2>
+
+	<form name="teclado" style="text-align: center;">
+		<input type="button" value="A" onclick="letraEscolhida(this);">
+		<input type="button" value="B" onclick="letraEscolhida(this);">
+		<input type="button" value="C" onclick="letraEscolhida(this);">
+		<input type="button" value="D" onclick="letraEscolhida(this);">
+		<input type="button" value="E" onclick="letraEscolhida(this);">
+		<input type="button" value="F" onclick="letraEscolhida(this);">
+		<input type="button" value="G" onclick="letraEscolhida(this);">
+		<input type="button" value="H" onclick="letraEscolhida(this);">
+		<input type="button" value="I" onclick="letraEscolhida(this);">
+		<input type="button" value="J" onclick="letraEscolhida(this);">
+		<input type="button" value="K" onclick="letraEscolhida(this);">
+		<input type="button" value="L" onclick="letraEscolhida(this);">
+		<input type="button" value="M" onclick="letraEscolhida(this);">
+		<input type="button" value="N" onclick="letraEscolhida(this);">
+		<input type="button" value="O" onclick="letraEscolhida(this);">
+		<input type="button" value="P" onclick="letraEscolhida(this);">
+		<input type="button" value="Q" onclick="letraEscolhida(this);">
+		<input type="button" value="R" onclick="letraEscolhida(this);">
+		<input type="button" value="S" onclick="letraEscolhida(this);">
+		<input type="button" value="T" onclick="letraEscolhida(this);">
+		<input type="button" value="U" onclick="letraEscolhida(this);">
+		<input type="button" value="V" onclick="letraEscolhida(this);">
+		<input type="button" value="X" onclick="letraEscolhida(this);">
+		<input type="button" value="W" onclick="letraEscolhida(this);">
+		<input type="button" value="Y" onclick="letraEscolhida(this);">
+		<input type="button" value="Z" onclick="letraEscolhida(this);">
+	</form>
+	
+	<h1 id="chance"></h1>
+
+
+	<script>
+
+		//Sorteio
+		var palavra = ["exceto","hostil"]
+		var sorteio = Math.floor(Math.random()*palavra.length);
+		palavra_sorteada = palavra[sorteio];
+		var c;
+		var c = 4;
+
+
+		if(palavra_sorteada == "exceto") {
+			function letraEscolhida(botao) {
+				if(botao.value == "E"){
+					document.getElementById("p1").innerHTML = "E";
+					document.getElementById("p4").innerHTML = "E";
+				}else{
+					if(botao.value == "X"){
+						document.getElementById("p2").innerHTML = "X";
+					}else{
+						if(botao.value == "C"){
+							document.getElementById("p3").innerHTML = "C";
+						}else{
+							if(botao.value == "T"){
+								document.getElementById("p5").innerHTML = "T";
+							}else{
+								if(botao.value == "O"){
+									document.getElementById("p6").innerHTML = "O";
+								}else{
+									c = c - 1;
+								}
+							}
+						}
+					}
+				}
+				if(c > 0){
+					document.getElementById("chance").innerHTML = "Chances: " + c;				
+				}else{
+					document.getElementById("chance").innerHTML = "Perdeu";
+				}
+			}					
+		}
+
+
+		if(palavra_sorteada == "hostil"){
+			function letraEscolhida(botao) {
+				if(botao.value == "H"){
+					document.getElementById("p1").innerHTML = "H";
+				}else{
+					if(botao.value == "O"){
+						document.getElementById("p2").innerHTML = "O";
+					}else{
+						if(botao.value == "S"){
+							document.getElementById("p3").innerHTML = "S";
+						}else{
+							if(botao.value == "T"){
+								document.getElementById("p4").innerHTML = "T";
+							}else{
+								if(botao.value == "I"){
+									document.getElementById("p5").innerHTML = "I";
+								}else{
+									if(botao.value == "L"){
+										document.getElementById("p6").innerHTML = "L";
+									}else{
+										c = c - 1;
+									}
+								}
+							}
+						}
+					}
+				}
+				if(c > 0){
+					document.getElementById("chance").innerHTML = "Chances: " + c;				
+				}else{
+					document.getElementById("chance").innerHTML = "Perdeu";
+				}
+			}			
+		}
+
+
+	</script>
+</body>
+</html>
